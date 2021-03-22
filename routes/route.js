@@ -22,7 +22,7 @@ router.post('/item', (req, res, next)=>{
 });
 
 router.delete('/item/:id', (req, res, next)=>{
-	items.remove({_id: req.params.id}, function(err, items) {
+	items.remove({_id: req.params.id}, function(err) {
 		if (err){
 			res.json(err);
 		}
@@ -47,6 +47,12 @@ router.post('/customers', (req, res, next)=>{
 		transaction_id: req.body.transaction_id
 	});
 	newcust.save();
+});
+
+router.post('/customer/:id', (req, res, next)=>{
+	customers.find({_id: req.params.id}, function(err, customers) {
+		res.json(customers);
+	});
 });
 
 module.exports = router;
