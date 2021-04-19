@@ -9,29 +9,29 @@ const custSchema = new mongoose.Schema({
     type: String,
     required: [true]
   },
-  table_no: {
-    type: Number,
+  token: {
+    type: String,
     required: [true]
   },
   arrival_time: {
     type: Date,
     required: [true]
   },
-  status: {
+  status: {				// "active:1 / inactive:1"
     type: Boolean,
     required: [true]
   },
-  order_type: {
+  order_type: {			// "takeaway / dinein"
     type: String,
     required: [true]
   },
   order_id: {
     type: String,
-    required: [true]
+    required: [false]
   },
   transaction_id: {
     type: String,
-    required: [true]
+    required: [false]
   }
 })
 

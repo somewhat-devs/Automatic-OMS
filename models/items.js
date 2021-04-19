@@ -20,7 +20,7 @@ const itemSchema = new mongoose.Schema({
   available: {
     type: Boolean,
     required: [true]
-  },
+  }
 })
 
 const items = module.exports = mongoose.model('items', itemSchema);
